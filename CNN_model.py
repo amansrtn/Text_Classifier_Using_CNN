@@ -59,14 +59,14 @@ model.compile(loss='binary_crossentropy',
 
 r=model.fit(data_train,Ytrain,epochs=20,validation_data=(data_test,Ytest))
 
-# import matplotlib.pyplot as plt
-# plt.plot(r.history['loss'],label='loss')
-# plt.plot(r.history['val_loss'],label='val_loss')
-# plt.legend()
+import matplotlib.pyplot as plt
+plt.plot(r.history['loss'],label='loss')
+plt.plot(r.history['val_loss'],label='val_loss')
+plt.legend()
 
-# plt.plot(r.history['accuracy'],label='test_accuracy')
-# plt.plot(r.history['val_accuracy'],label=['val_accuracy'])
-# plt.legend()
+plt.plot(r.history['accuracy'],label='test_accuracy')
+plt.plot(r.history['val_accuracy'],label=['val_accuracy'])
+plt.legend()
 
 pickle.dump(model, open('model.pkl', 'wb'))
 model = pickle.load(open('model.pkl', 'rb'))
